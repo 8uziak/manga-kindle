@@ -3,7 +3,7 @@ import re
 import zipfile
 import shutil
 
-def list_files(directory):
+def list_files(directory: str) -> None:
     try:
         files = os.listdir(directory)
         print("Files in directory:", directory)
@@ -12,17 +12,17 @@ def list_files(directory):
     except Exception as e:
         print(f"Error occurred: {e}")
 
-def natural_sort_key(s):
+def natural_sort_key(s: str) -> str:
     return [int(text) if text.isdigit() else text.lower() for text in re.split(r'(\d+)', s)]
 
-def copy_file(source_file, destination_file):
+def copy_file(source_file: str, destination_file: str) -> None:
     try:
         shutil.copyfile(source_file, destination_file)
         print(f"File '{source_file}' copied to '{destination_file}' successfully.")
     except Exception as e:
         print(f"Error occurred: {e}")
 
-def move_files(source_folder, destination_folder):
+def move_files(source_folder: str, destination_folder: str) -> None:
     # List all files in the source folder
     files = os.listdir(source_folder)
     # Move each file to the destination folder
@@ -33,14 +33,14 @@ def move_files(source_folder, destination_folder):
         print(f"Moved: {source_file_path} to {destination_file_path}")
 
 
-def count_files_in_folder(folder_path):
+def count_files_in_folder(folder_path: str) -> int:
     # List all files in the folder
     files = os.listdir(folder_path)
     # Count the number of files
     num_files = len(files)
     return num_files
 
-def final_folder_to_manga_name_folder(folder_path, manga_name):
+def final_folder_to_manga_name_folder(folder_path: str, manga_name: str) -> None:
     # Create a folder named "Chainsaw man" if it doesn't exist
     manga_name_folder = os.path.join(folder_path, manga_name)
     final_folder = os.path.join(manga_name_folder, 'final')
@@ -57,7 +57,7 @@ def final_folder_to_manga_name_folder(folder_path, manga_name):
     print(f"Renamed {end_folder_name}.zip to {end_folder_name}.cbz")
 
 
-def rename_cbz_to_zip(folder_path, manga_name):
+def rename_cbz_to_zip(folder_path: str, manga_name: str) -> None:
     
     # Create a folder named "Chainsaw man" if it doesn't exist
     manga_name_folder = os.path.join(folder_path, manga_name)
