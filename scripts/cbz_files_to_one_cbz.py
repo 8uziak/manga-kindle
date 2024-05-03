@@ -61,7 +61,6 @@ class CbzFilesToOneCbz:
         print(f"Renamed {end_folder_name}.zip to {end_folder_name}.cbz")
 
     def rename_cbz_to_zip(self, folder_path: str, manga_name: str) -> None:
-        # Create a folder named "Chainsaw man" if it doesn't exist
         manga_name_folder = os.path.join(folder_path, manga_name)
         processing_folder = os.path.join(manga_name_folder, 'processing')
         final_folder = os.path.join(manga_name_folder, 'final')
@@ -75,7 +74,7 @@ class CbzFilesToOneCbz:
             os.mkdir(final_folder)
             print(f"Created folder: {final_folder}")
         
-        # List all files in the folder
+        # List all files in the folder_path
         files = sorted(os.listdir(folder_path), key=self.natural_sort_key)
         print(files)
         
@@ -111,17 +110,16 @@ class CbzFilesToOneCbz:
                     os.rename(old_page_path, new_page_path)
                     print(f"Renamed {old_page_path} to {new_page_path}")
 
-        
-
                 # Call the function to move files
                 self.move_files(processing_folder, final_folder)
 
                 shutil.rmtree(processing_folder)
                 print(f"Deleted all files from {processing_folder}")
         
+        # TODO: custom Cover for a manga
         # list_files(manga_name_folder) - check files in dir 
-        source_file = '/Users/mateuszbuziak/Dokumenty/Manga/0.jpg'
-        destination_file = os.path.join(final_folder, os.path.basename(source_file))
-        self.copy_file(source_file, destination_file)
+        # source_file = '/Users/mateuszbuziak/Dokumenty/Manga/0.jpg'
+        # destination_file = os.path.join(final_folder, os.path.basename(source_file))
+        # self.copy_file(source_file, destination_file)
 
         self.final_folder_to_manga_name_folder(folder_path, manga_name)

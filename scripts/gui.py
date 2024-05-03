@@ -4,6 +4,7 @@ from gui_functionality import GuiFunctionality
 from pathlib import Path
 import tkinter as tk
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, filedialog
+import os
 
 class Gui(tk.Tk):
     def __init__(self):
@@ -12,7 +13,10 @@ class Gui(tk.Tk):
 
         self.title('mangaKindle')
         self.geometry("700x700")
+        photo = PhotoImage(file = os.getcwd() + "/scripts/gui_elements/icon.png")
+        self.iconphoto(False, photo)
         self.configure(bg = "#FFFFFF")
+        self.main = CbzFilesToOneCbz()
 
         canvas = Canvas(
             self,
@@ -112,7 +116,7 @@ class Gui(tk.Tk):
             image=button_image_3,
             borderwidth=0,
             highlightthickness=0,
-            command=lambda: print("button_3 clicked"),
+            command=lambda: self.main.rename_cbz_to_zip(entry_1.get(),entry_2.get()),
             relief="flat"
         )
         button_3.place(
@@ -123,6 +127,3 @@ class Gui(tk.Tk):
         )
         self.resizable(False, False)
         self.mainloop()
-
-if __name__ == "__main__":
-    Gui()
