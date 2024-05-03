@@ -39,7 +39,7 @@ class Gui(tk.Tk):
             image=button_image_1,
             borderwidth=0,
             highlightthickness=0,
-            command=self.gui_functionality.browseDirectory,
+            command=lambda: [entry_1.delete(0,"end"), entry_1.insert(0, self.gui_functionality.browseDirectory())],
             relief="flat"
         )
         button_1.place(
@@ -76,7 +76,7 @@ class Gui(tk.Tk):
             image=button_image_2,
             borderwidth=0,
             highlightthickness=0,
-            command=self.gui_functionality.browseFiles,
+            command=lambda: [entry_2.delete(0,"end"), entry_2.insert(0, self.gui_functionality.browseFiles())],
             relief="flat"
         )
         button_2.place(
