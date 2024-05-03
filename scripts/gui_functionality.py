@@ -7,7 +7,7 @@ from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, filedialog
 class GuiFunctionality:
     def __init__(self) -> None:    
         self.OUTPUT_PATH = Path(__file__).parent
-        self.ASSETS_PATH = self.OUTPUT_PATH / Path(r'/Users/mateuszbuziak/Code/manga-kindle/scripts/gui_elements')
+        self.ASSETS_PATH = self.OUTPUT_PATH / Path(r'/Users/mateuszbuziak/Code/manga-kindle/scripts/gui_elements') #TODO change this directory to os.path or something
 
     def relative_to_assets(self, path: str) -> Path:
         return self.ASSETS_PATH / Path(path)
