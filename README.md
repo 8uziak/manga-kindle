@@ -1,5 +1,6 @@
 # manga-kindle
 
+TODO: make README.md look nice
 
 GUI:
 project: Figma
@@ -8,3 +9,6 @@ icons from:  https://www.figma.com/community/file/1067390089827225294/500-free-e
 
 ICON:
 deepai.org: https://deepai.org
+
+PIP:
+pip install -i https://test.pypi.org/simple/ manga-kindle-8uziak==0.0.1
