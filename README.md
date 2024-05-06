@@ -30,13 +30,6 @@ All contributions from the open-source community, individuals, and partners are 
 
 [LEARN.md](LEARN.md)
 
-## Contact Me
-
-If you want to contact me, you can
-reach me at matbuziak@gmail.com
-
-Connect with me on [![Linkedin](https://img.shields.io/badge/Linkedin-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/mateusz-buziak/)
-
 ## Tools 
 
 ### GUI:
@@ -48,4 +41,11 @@ Connect with me on [![Linkedin](https://img.shields.io/badge/Linkedin-blue?style
 - [deepai.org](https://deepai.org)
 
 #### Template for this README.md: 
-[Tkinter-Designer](https://github.com/ParthJadhav/Tkinter-Designer/tree/master?tab=readme-ov-file)
+- [Tkinter-Designer](https://github.com/ParthJadhav/Tkinter-Designer/tree/master?tab=readme-ov-file)
+
+## Contact Me
+
+If you want to contact me, you can
+reach me at matbuziak@gmail.com
+
+Connect with me on [![Linkedin](https://img.shields.io/badge/Linkedin-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/mateusz-buziak/)
