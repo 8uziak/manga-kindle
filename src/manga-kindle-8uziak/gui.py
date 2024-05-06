@@ -13,7 +13,7 @@ class Gui(tk.Tk):
 
         self.title('mangaKindle')
         self.geometry("700x700")
-        photo = PhotoImage(file = os.getcwd() + "/scripts/gui_elements/icon.png")
+        photo = PhotoImage(file = os.getcwd() + "/src/manga-kindle-8uziak/gui_elements/icon.png")
         self.iconphoto(False, photo)
         self.configure(bg = "#FFFFFF")
         self.main = CbzFilesToOneCbz()
