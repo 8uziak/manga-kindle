@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="200" src="https://github.com/8uziak/manga-kindle/blob/dev/src/manga-kindle/gui_elements/icon.png" alt="logo">
+  <img width="200" src="https://raw.githubusercontent.com/8uziak/manga-kindle/dev/src/manga_kindle/gui_elements/icon.png" alt="logo">
   <h1 align="center" style="margin: 0 auto 0 auto;">Manga Kindle</h1>
   <h4 align="center" style="margin: 0 auto 0 auto;">Many to one CBZ file converter</h4>
 
