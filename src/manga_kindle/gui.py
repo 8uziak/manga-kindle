@@ -1,10 +1,7 @@
-
-from cbz_files_to_one_cbz import CbzFilesToOneCbz
-from gui_functionality import GuiFunctionality
-from pathlib import Path
+from manga_kindle.cbz_files_to_one_cbz import CbzFilesToOneCbz 
+from manga_kindle.gui_functionality import GuiFunctionality
 import tkinter as tk
-from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, filedialog
-import os
+from tkinter import Canvas, Entry, Button, PhotoImage
 
 class Gui(tk.Tk):
     def __init__(self):
@@ -13,8 +10,10 @@ class Gui(tk.Tk):
 
         self.title('mangaKindle')
         self.geometry("700x700")
-        photo = PhotoImage(file = os.getcwd() + "/src/manga-kindle-8uziak/gui_elements/icon.png")
-        self.iconphoto(False, photo)
+
+        iconPhoto = PhotoImage(file = self.gui_functionality.relative_to_assets("icon.png"))
+        self.iconphoto(False, iconPhoto)
+        
         self.configure(bg = "#FFFFFF")
         self.main = CbzFilesToOneCbz()
 

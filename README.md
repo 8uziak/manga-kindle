@@ -1,7 +1,7 @@
 <p align="center">
   <img width="200" src="https://github.com/8uziak/manga-kindle/blob/dev/src/manga-kindle-8uziak/gui_elements/icon.png" alt="logo">
   <h1 align="center" style="margin: 0 auto 0 auto;">Manga Kindle</h1>
-  <h4 align="center" style="margin: 0 auto 0 auto;">Create one CBZ file from many CBZ file to read all your favorite manga chapters on one go</h4>
+  <h4 align="center" style="margin: 0 auto 0 auto;">Many to one CBZ file converter</h4>
 
 
 <p align="center">
@@ -14,11 +14,11 @@
 
 ## Introduction
 
-<img width="500" alt="manga-kindle UI" src="https://raw.githubusercontent.com/8uziak/manga-kindle/dev/graphic/manga_kindle_window_image.png">
+<img width="500" alt="manga-kindle UI" src="https://raw.githubusercontent.com/8uziak/manga-kindle/master/graphics/manga_kindle_window_image.png">
 
 ## Instructions (how to make it works)
 
-<a href="/docs/instructions.md" target="_blank"><img src="https://user-images.githubusercontent.com/42001064/196041925-64f81f75-8bee-42ac-a234-a93339bc8cdc.png" alt="Instructions" width="180px" ></a>
+<a href="/docs/instructions.md" target="_blank"><img src="https://raw.githubusercontent.com/8uziak/manga-kindle/dev/graphics/instructions_image.png" alt="Instructions" width="180px" ></a>
 
 ## Contribute
 

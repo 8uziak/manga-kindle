@@ -1,7 +1,5 @@
-from cbz_files_to_one_cbz import CbzFilesToOneCbz
 from pathlib import Path
-import tkinter as tk
-from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, filedialog
+from tkinter import filedialog
 import os
 
 
