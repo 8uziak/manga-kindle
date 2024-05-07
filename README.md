@@ -18,7 +18,7 @@
 
 ## Instructions (how to make it works)
 
-<a href="/docs/instructions.md" target="_blank"><img src="https://user-images.githubusercontent.com/42001064/196041925-64f81f75-8bee-42ac-a234-a93339bc8cdc.png" alt="Instructions" width="180px" ></a>
+<a href="/docs/instructions.md" target="_blank"><img src="https://raw.githubusercontent.com/8uziak/manga-kindle/dev/graphics/instructions_image.png" alt="Instructions" width="180px" ></a>
 
 ## Contribute
 
