@@ -40,13 +40,13 @@ Before using Tkinter Designer, you'll need to install Python.
     
     1. Create main.py file and copy paste code below to main.py
         
-        ```   
+        ```python   
         from manga_kindle.main import main 
                                               
             if __name__ == '__main__':        
                 main()                        
         ```
-        
+
     2. Copy paste code below to CMD
 
         ` python main.py `
