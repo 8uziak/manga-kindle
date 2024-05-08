@@ -1,6 +1,7 @@
 from pathlib import Path
 from tkinter import filedialog
 import os
+import webbrowser
 
 
 class GuiFunctionality:
@@ -25,4 +26,8 @@ class GuiFunctionality:
         file_path = filedialog.askopenfilename()
         if file_path:
             file_name = os.path.basename(file_path)
-            return file_name        
+            return file_name
+    
+    def here_instructions_md(self, event):
+        instructions = ("https://github.com/8uziak/manga-kindle/blob/master/docs/instructions.md")
+        webbrowser.open_new_tab(instructions)
