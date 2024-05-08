@@ -10,7 +10,9 @@ Before using Tkinter Designer, you'll need to install Python.
 
 *Two options:*
 
-1. ``` 
+1. Install Manga Kindle from PyPI.
+
+    ``` 
     pip install -i https://test.pypi.org/simple/ manga-kindle==0.0.1
     ```
 
@@ -37,10 +39,10 @@ Before using Tkinter Designer, you'll need to install Python.
         pip install -e .
         ```
 
-        If pip install doesn't work try replacing it with
-            - ` pip3 install `
-            - ` python -m pip install `
-            - ` python3 -m pip install `
+        If *pip* install doesn't work try replacing it with one of these
+          - `pip3 install`
+          - `python -m pip install`
+          - `python3 -m pip install`
 
    This will install all requirements and Manga-Kindle.
 
