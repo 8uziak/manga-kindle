@@ -10,13 +10,15 @@ Before using Tkinter Designer, you'll need to install Python.
 
 *Two options:*
 
-1. ```sh pip install -i https://test.pypi.org/simple/ manga-kindle==0.0.1```
+1. ``` 
+    pip install -i https://test.pypi.org/simple/ manga-kindle==0.0.1
+    ```
 
 2. To run Manga-Kindle from the source code, follow the instructions below.
 
    1. Download the source files for Manga-Kindle by downloading it manually or using GIT.
 
-        ```sh
+        ```
         git clone https://github.com/8uziak/manga-kindle.git
         ```
 
