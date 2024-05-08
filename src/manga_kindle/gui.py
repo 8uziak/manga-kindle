@@ -2,6 +2,7 @@ from manga_kindle.cbz_files_to_one_cbz import CbzFilesToOneCbz
 from manga_kindle.gui_functionality import GuiFunctionality
 import tkinter as tk
 from tkinter import Canvas, Entry, Button, PhotoImage
+from tkinter.messagebox import showinfo
 
 class Gui(tk.Tk):
     def __init__(self):
@@ -107,7 +108,7 @@ class Gui(tk.Tk):
             y=499.0,
             width=485.0,
             height=37.0
-        )
+        )             
 
         button_image_3 = PhotoImage(
             file=self.gui_functionality.relative_to_assets("button_3.png"))
@@ -115,7 +116,10 @@ class Gui(tk.Tk):
             image=button_image_3,
             borderwidth=0,
             highlightthickness=0,
-            command=lambda: self.main.rename_cbz_to_zip(entry_1.get(),entry_2.get()),
+            command=lambda: self.convert(
+                entry_1.get() if entry_1.get() != '' else None, 
+                entry_2.get() if entry_2.get() != '' else None
+                ),
             relief="flat"
         )
         button_3.place(
@@ -126,3 +130,14 @@ class Gui(tk.Tk):
         )
         self.resizable(False, False)
         self.mainloop()
+    
+    def convert(self, entry_add_directory, entry_add_file):
+        try:
+            self.main.rename_cbz_to_zip(entry_add_directory, entry_add_file)
+            showinfo("Window", "Conversion successful!")
+        except TypeError:
+            showinfo("Window", 'Entry 1 or Entry 2 not filled in')
+        except FileNotFoundError:
+            showinfo("Window", "No such directory " + entry_add_directory)
+        except OSError:
+            showinfo("Window", "Can't create file " + entry_add_file)
