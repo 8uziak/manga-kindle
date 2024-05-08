@@ -59,8 +59,12 @@ class CbzFilesToOneCbz:
         # Rename the zip file to .cbz
         os.rename(f"{end_folder_name}.zip", f"{end_folder_name}.cbz")
         print(f"Renamed {end_folder_name}.zip to {end_folder_name}.cbz")
+    
+    def custom_cover(self, custom_cover_path: str, final_folder: str) -> None:
+        destination_file = os.path.join(final_folder, os.path.basename(custom_cover_path))
+        self.copy_file(custom_cover_path, destination_file)
 
-    def rename_cbz_to_zip(self, folder_path: str, manga_name: str) -> None:
+    def rename_cbz_to_zip(self, folder_path: str, manga_name: str, custom_cover_path=None) -> None:
         manga_name_folder = os.path.join(folder_path, manga_name)
         processing_folder = os.path.join(manga_name_folder, 'processing')
         final_folder = os.path.join(manga_name_folder, 'final')
@@ -116,10 +120,9 @@ class CbzFilesToOneCbz:
                 shutil.rmtree(processing_folder)
                 print(f"Deleted all files from {processing_folder}")
         
-        # TODO: custom Cover for a manga
-        # list_files(manga_name_folder) - check files in dir 
-        # source_file = '/Users/mateuszbuziak/Dokumenty/Manga/0.jpg'
-        # destination_file = os.path.join(final_folder, os.path.basename(source_file))
-        # self.copy_file(source_file, destination_file)
+        self.list_files(manga_name_folder)
 
+        if custom_cover_path:
+            self.custom_cover(custom_cover_path, final_folder)
+            
         self.final_folder_to_manga_name_folder(folder_path, manga_name)
