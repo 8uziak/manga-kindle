@@ -14,7 +14,7 @@
 
 ## Introduction
 
-<img width="500" alt="manga-kindle UI" src="https://raw.githubusercontent.com/8uziak/manga-kindle/master/graphics/manga_kindle_window_image.png">
+<img width="500" alt="manga-kindle UI" src="https://raw.githubusercontent.com/8uziak/manga-kindle/dev/graphics/manga_kindle_window_image.png">
 
 ## Instructions (how to make it works)
 

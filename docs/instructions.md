@@ -87,7 +87,7 @@ Before using Tkinter Designer, you'll need to install Python.
 
 ## GUI - How does it work
 
-    1. Custom cover lets you add your cover of choice. It means it cant be whatever image (jpg/png) you want! 
+    1. Add custom cover lets you add your cover of choice. It means it cant be whatever image (jpg/png) you want! 
 
     2. Add directory: you can click a 'Add directory' button or write it yourself below the button. It's going to be a directory from which the program will take all your CBZ files and turn it to a one CBZ file. 
     NOTE: all input CBZ files need to be sortable, because an app sorts every file in directory and then it renames files inside these CBZ files one by one. I
