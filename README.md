@@ -49,3 +49,5 @@ If you want to contact me, you can
 reach me at matbuziak@gmail.com
 
 Connect with me on [![Linkedin](https://img.shields.io/badge/Linkedin-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/mateusz-buziak/)
+
+![8uziak](https://raw.githubusercontent.com/8uziak/manga-kindle/dev/graphics/elmo-fire.gif)
