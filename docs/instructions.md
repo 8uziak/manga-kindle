@@ -55,8 +55,8 @@ Before using Tkinter Designer, you'll need to install Python.
         ```python   
         from manga_kindle.main import main 
                                               
-            if __name__ == '__main__':        
-                main()                        
+        if __name__ == '__main__':        
+            main()                        
         ```
 
     2. Copy paste code below to CMD
