@@ -30,13 +30,17 @@ Before using Tkinter Designer, you'll need to install Python.
 
    3. Install the necessary dependencies by running
 
-      - `pip install -r requirements.txt`
-         - In the event that pip doesn't work, also try the following commands:
-         - `pip3 install -r requirements.txt`
-         - `python -m pip install -r requirements.txt`
-         - `python3 -m pip install -r requirements.txt`
-         - If this still doesn't work, ensure that Python is added to the PATH.
-      - `pip install -e .`
+        ```
+        pip install -r requirements.txt
+        ```
+        ```
+        pip install -e .
+        ```
+
+        If pip install doesn't work try replacing it with
+            - ` pip3 install `
+            - ` python -m pip install `
+            - ` python3 -m pip install `
 
    This will install all requirements and Manga-Kindle.
 
