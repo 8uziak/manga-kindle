@@ -87,7 +87,9 @@ Before using Tkinter Designer, you'll need to install Python.
 
 ## GUI - How does it work
 
-    1. Add directory: you can click a 'Add directory' button or write it yourself below the button. It's going to be a directory from which the program will take all your CBZ files and turn it to a one CBZ file. 
+    1. Custom cover lets you add your cover of choice. It means it cant be whatever image (jpg/png) you want! 
+
+    2. Add directory: you can click a 'Add directory' button or write it yourself below the button. It's going to be a directory from which the program will take all your CBZ files and turn it to a one CBZ file. 
     NOTE: all input CBZ files need to be sortable, because an app sorts every file in directory and then it renames files inside these CBZ files one by one. I
     It means there should be naming pattern (name + number) e.g:
     - attack_on_titan_chapter_1, attack_on_titan_chapter_2, attack_on_titan_chapter_3
@@ -95,6 +97,6 @@ Before using Tkinter Designer, you'll need to install Python.
     - 1_attack_on_titan, 2_attack_on_titan, 3_attack_on_titan
     - etc.
 
-    2. Add file: you can click a 'Add file' button or write it yourself below the button. It's going to be a name of a folder with final CBZ file.
+    3. Add file: you can click a 'Add file' button or write it yourself below the button. It's going to be a name of a folder with final CBZ file.
 
-    3. Click Convert button to convert many to one CBZ file.
+    4. Click Convert button to convert many to one CBZ file.
