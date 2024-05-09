@@ -15,7 +15,7 @@ class Gui(tk.Tk):
         self.clickable_here()
         self.button_custom_cover()
         self.button_add_directory()
-        self.button_add_file()
+        self.button_add_folder()
         self.button_convert()
 
     def window(self):
@@ -141,14 +141,14 @@ class Gui(tk.Tk):
             height=37.0
         )
 
-    def button_add_file(self):
+    def button_add_folder(self):
         self.button_image_2 = PhotoImage(
             file=self.gui_functionality.relative_to_assets("button_2.png"))
         self.button_2 = Button(
             image=self.button_image_2,
             borderwidth=0,
             highlightthickness=0,
-            command=lambda: [self.entry_2.delete(0,"end"), self.entry_2.insert(0, self.gui_functionality.browseFiles())],
+            command=lambda: [self.entry_2.delete(0,"end"), self.entry_2.insert(0, self.gui_functionality.browseFolder())],
             relief="flat"
         )
         self.button_2.place(
