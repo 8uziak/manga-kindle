@@ -22,11 +22,11 @@ class GuiFunctionality:
         if directory_path:
             return directory_path
 
-    def browseFiles(self):
-        file_path = filedialog.askopenfilename()
-        if file_path:
-            file_name = os.path.basename(file_path)
-            return file_name
+    def browseFolder(self):
+        folder_path = filedialog.askdirectory()
+        if folder_path:
+            folder_name = os.path.basename(folder_path)
+            return folder_name
     
     def here_instructions_md(self, event):
         instructions = ("https://github.com/8uziak/manga-kindle/blob/master/docs/instructions.md")
