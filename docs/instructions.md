@@ -13,7 +13,7 @@ Before using Manga Kindle, you'll need to install Python.
 1. Install Manga Kindle from PyPI.
 
     ``` 
-    pip install -i https://test.pypi.org/simple/ manga-kindle==0.0.1
+    pip install -i https://test.pypi.org/simple/ manga-kindle==0.0.2
     ```
 
 2. To run Manga-Kindle from the source code, follow the instructions below.
