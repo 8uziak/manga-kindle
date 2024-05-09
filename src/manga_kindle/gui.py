@@ -9,7 +9,6 @@ class Gui(tk.Tk):
     def __init__(self):
         super().__init__()
         self.gui_functionality = GuiFunctionality()
-        self.main = CbzFilesToOneCbz()
         
         self.window()
         self.background()
@@ -202,7 +201,7 @@ class Gui(tk.Tk):
     
     def convert(self, entry_custom_cover, entry_add_directory, entry_add_file):
         try:
-            self.main.rename_cbz_to_zip(entry_add_directory, entry_add_file, entry_custom_cover)
+            CbzFilesToOneCbz(entry_add_directory, entry_add_file, entry_custom_cover)
             showinfo("Window", "Conversion successful!")
         except TypeError:
             showinfo("Window", 'Add directory and/or Add file not filled in')
