@@ -85,7 +85,7 @@ Before using Manga Kindle, you'll need to install Python.
         python3 src/manga-kindle/main.py
         ```
 
-## GUI - How does it work
+## GUI (How does it work)
 
     1. [Not required] Add custom cover lets you add your cover of choice. It means it cant be whatever image (jpg/png) you want! 
 
