@@ -12,17 +12,17 @@ class GuiFunctionality:
     def relative_to_assets(self, path: str) -> Path:
         return self.ASSETS_PATH / Path(path)
     
-    def browseFilePlusDirectory(self):
+    def browse_fil_plus_directory(self):
         file_with_directory_name = filedialog.askopenfilename()
         if file_with_directory_name:
             return file_with_directory_name
 
-    def browseDirectory(self):
+    def browse_directory(self):
         directory_path = filedialog.askdirectory()
         if directory_path:
             return directory_path
 
-    def browseFolder(self):
+    def browse_folder(self):
         folder_path = filedialog.askdirectory()
         if folder_path:
             folder_name = os.path.basename(folder_path)

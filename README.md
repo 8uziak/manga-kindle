@@ -43,6 +43,9 @@ All contributions from the open-source community, individuals, and partners are 
 #### Template for this README.md: 
 - [Tkinter-Designer](https://github.com/ParthJadhav/Tkinter-Designer/tree/master?tab=readme-ov-file)
 
+### Documentation
+- Folder structure diagrams: [tree.nathanfriend.io](https://gitlab.com/nfriend/tree-online)
+
 ## Contact Me
 
 If you want to contact me, you can
