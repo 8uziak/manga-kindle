@@ -100,3 +100,32 @@ Before using Manga Kindle, you'll need to install Python.
     3. [Required] Add file: you can click a 'Add file' button or write it yourself below the button. It's going to be a name of a folder with final CBZ file.
 
     4. Click Convert button to convert many to one CBZ file.
+
+
+    ### Egzample workpath before
+    .
+    └── manga_folder/
+        ├── attack_on_manga chapter 1.cbz
+        ├── attack_on_manga chapter 2.cbz
+        ├── attack_on_manga chapter 3.cbz
+        ├── attack_on_manga chapter 4.cbz
+        ├── attack_on_manga chapter 5.cbz
+        └── ... etc.cbz
+
+    ### Egzample workpath after (assuming you put 'attack_on_manga' in Add folder textbox)
+    .
+    └── manga_folder/
+        ├── attack_on_manga chapter 1.cbz
+        ├── attack_on_manga chapter 2.cbz
+        ├── attack_on_manga chapter 3.cbz
+        ├── attack_on_manga chapter 4.cbz
+        ├── attack_on_manga chapter 5.cbz
+        ├── ... etc.cbz
+        └── attack_on_manga/
+            ├── attack_on_manga/
+            │   ├── 0.jpg # <- if you added your custom manga cover (using Add custom cover)
+            │   ├── 1.jpg
+            │   ├── 2.jpg
+            │   ├── 3.jpg
+            │   └── ... etc.jpg
+            └── attack_on_manga.cbz # <- with all jpg files which you can see in attack_on_manga folder
