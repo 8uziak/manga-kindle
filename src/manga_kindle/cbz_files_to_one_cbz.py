@@ -10,36 +10,30 @@ class CbzFilesToOneCbz:
         self.manga_name = manga_name
         self.custom_cover_path = custom_cover_path
 
-        self.manga_name_folder = os.path.join(folder_path, manga_name)
+        self.manga_name_folder = os.path.join(self.folder_path, self.manga_name)
         self.copy_cbz_files = os.path.join(self.manga_name_folder, 'cbz_copy_file')
         self.processing_folder = os.path.join(self.manga_name_folder, 'processing')
         self.final_folder = os.path.join(self.manga_name_folder, 'final')
 
-        self.create_folders_to_process_operation(self.manga_name_folder, self.copy_cbz_files, self.processing_folder, self.final_folder)
+        self.create_folders_to_process_operation(self.manga_name_folder)
+        self.create_folders_to_process_operation(self.copy_cbz_files)
+        self.create_folders_to_process_operation(self.processing_folder)
+        self.create_folders_to_process_operation(self.final_folder)
+
         self.move_files_from_source_dir_to_temporary_folder(self.folder_path, self.copy_cbz_files)
         self.rename_cbz_to_zip(self.copy_cbz_files, self.processing_folder, self.final_folder)
         self.list_files(self.manga_name_folder)
-
-        shutil.rmtree(self.copy_cbz_files)
+        self.remove_temp_workpath(self.copy_cbz_files)
 
         if self.custom_cover_path:
             self.custom_cover(self.custom_cover_path, self.final_folder)
             
-        self.final_folder_to_manga_name_folder(folder_path, manga_name)
+        self.final_folder_to_manga_name_folder(self.folder_path, self.manga_name)
 
-    def create_folders_to_process_operation(self, manga_name_folder: str | None, copy_cbz_files: str, processing_folder: str, final_folder: str) -> None:
-        if not os.path.exists(manga_name_folder):
-            os.mkdir(manga_name_folder)
-            print(f"Created folder: {manga_name_folder}")
-            
-        os.mkdir(copy_cbz_files)
-        print(f"Created folder: {copy_cbz_files}")
-
-        os.mkdir(processing_folder)
-        print(f"Created folder: {processing_folder}")
-
-        os.mkdir(final_folder)
-        print(f"Created folder: {final_folder}")
+    def create_folders_to_process_operation(self, folder_name: str | None) -> None:
+        if not os.path.exists(folder_name):
+            os.mkdir(folder_name)
+            print(f"Created folder: {folder_name}")
 
     def move_files_from_source_dir_to_temporary_folder(self, folder_path: str, copy_cbz_files: str) -> None:
         files = os.listdir(folder_path)
@@ -99,6 +93,10 @@ class CbzFilesToOneCbz:
     def custom_cover(self, custom_cover_path: str, final_folder: str) -> None:
         destination_file = os.path.join(final_folder, os.path.basename(custom_cover_path))
         self.copy_file_from_one_destination_to_other_destination(custom_cover_path, destination_file)
+    
+    def remove_temp_workpath(self, workpath: str) -> None:
+        shutil.rmtree(workpath)
+        print(f"Deleted all files from {workpath}")
 
     def rename_cbz_to_zip(self, copy_cbz_files: str, processing_folder: str, final_folder: str) -> None:
         files = sorted(os.listdir(copy_cbz_files), key=self.natural_sort_key)
@@ -130,8 +128,7 @@ class CbzFilesToOneCbz:
                     os.rename(old_page_path, new_page_path)
                     print(f"Renamed {old_page_path} to {new_page_path}")
 
+                self.remove_temp_workpath(processing_folder)
                 self.move_files(processing_folder, final_folder)
 
-                shutil.rmtree(processing_folder)
                 
-                print(f"Deleted all files from {processing_folder}")
