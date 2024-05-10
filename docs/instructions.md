@@ -85,50 +85,50 @@ Before using Manga Kindle, you'll need to install Python.
         python3 src/manga-kindle/main.py
         ```
 
-    ## GUI (How does it work)
+## 4. GUI (How does it work)
 
-    1. **[Not Required]** Add custom cover lets you add your cover of choice. It means it cant be whatever image (jpg/png) you want! 
+1. **[Not Required]** Add custom cover lets you add your cover of choice. It means it cant be whatever image (jpg/png) you want! 
 
-    2. **[Required]** Add directory: you can click a 'Add directory' button or write it yourself below the button. It's going to be a directory from which the program will take all your CBZ files and turn it to a one CBZ file. 
-    NOTE: all input CBZ files need to be sortable, because an app sorts every file in directory and then it renames files inside these CBZ files one by one. I
-    It means there should be naming pattern (name + number) e.g:
-    - attack_on_titan_chapter_1, attack_on_titan_chapter_2, attack_on_titan_chapter_3
-    - attack_on_titan_1, attack_on_titan_2, attack_on_titan_3
-    - 1_attack_on_titan, 2_attack_on_titan, 3_attack_on_titan
-    - etc.
+2. **[Required]** Add directory: you can click a 'Add directory' button or write it yourself below the button. It's going to be a directory from which the program will take all your CBZ files and turn it to a one CBZ file. 
+NOTE: all input CBZ files need to be sortable, because an app sorts every file in directory and then it renames files inside these CBZ files one by one. I
+It means there should be naming pattern (name + number) e.g:
+- attack_on_titan_chapter_1, attack_on_titan_chapter_2, attack_on_titan_chapter_3
+- attack_on_titan_1, attack_on_titan_2, attack_on_titan_3
+- 1_attack_on_titan, 2_attack_on_titan, 3_attack_on_titan
+- etc.
 
-    3. **[Required]** Add file: you can click a 'Add file' button or write it yourself below the button. It's going to be a name of a folder with final CBZ file.
+3. **[Required]** Add file: you can click a 'Add file' button or write it yourself below the button. It's going to be a name of a folder with final CBZ file.
 
-    4. Click Convert button to convert many to one CBZ file.
+4. Click Convert button to convert many to one CBZ file.
 
 
-    ### Egzample workpath before
-    ```
-    .
-    └── manga_folder/
-        ├── attack_on_manga chapter 1.cbz
-        ├── attack_on_manga chapter 2.cbz
-        ├── attack_on_manga chapter 3.cbz
-        ├── attack_on_manga chapter 4.cbz
-        ├── attack_on_manga chapter 5.cbz
-        └── ... etc.cbz
-    ```
-    ### Egzample workpath after (assuming you put 'attack_on_manga' in Add folder textbox)
-    ```
-    .
-    └── manga_folder/
-        ├── attack_on_manga chapter 1.cbz
-        ├── attack_on_manga chapter 2.cbz
-        ├── attack_on_manga chapter 3.cbz
-        ├── attack_on_manga chapter 4.cbz
-        ├── attack_on_manga chapter 5.cbz
-        ├── ... etc.cbz
-        └── attack_on_manga/
-            ├── attack_on_manga/
-            │   ├── 0.jpg # <- if you added your custom manga cover (using Add custom cover)
-            │   ├── 1.jpg
-            │   ├── 2.jpg
-            │   ├── 3.jpg
-            │   └── ... etc.jpg
-            └── attack_on_manga.cbz # <- with all jpg files which you can see in attack_on_manga folder
-    ```
+### Egzample workpath before
+```
+.
+└── manga_folder/
+    ├── attack_on_manga chapter 1.cbz
+    ├── attack_on_manga chapter 2.cbz
+    ├── attack_on_manga chapter 3.cbz
+    ├── attack_on_manga chapter 4.cbz
+    ├── attack_on_manga chapter 5.cbz
+    └── ... etc.cbz
+```
+### Egzample workpath after (assuming you put 'attack_on_manga' in Add folder textbox)
+```
+.
+└── manga_folder/
+    ├── attack_on_manga chapter 1.cbz
+    ├── attack_on_manga chapter 2.cbz
+    ├── attack_on_manga chapter 3.cbz
+    ├── attack_on_manga chapter 4.cbz
+    ├── attack_on_manga chapter 5.cbz
+    ├── ... etc.cbz
+    └── attack_on_manga/
+        ├── attack_on_manga/
+        │   ├── 0.jpg # <- if you added your custom manga cover (using Add custom cover)
+        │   ├── 1.jpg
+        │   ├── 2.jpg
+        │   ├── 3.jpg
+        │   └── ... etc.jpg
+        └── attack_on_manga.cbz # <- with all jpg files which you can see in attack_on_manga folder
+```
