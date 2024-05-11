@@ -101,7 +101,7 @@ It means there should be naming pattern (name + number) e.g:
 
 4. Click Convert button to convert many to one CBZ file.
 
-5. Egzample workpaths ('#<-' is an indication of a comment in worktrees below)
+## 5. Egzample workpaths ('#<-' is an indication of a comment in worktrees below)
 
 ### 1. [before] With no folder of the same name as added via "add folder" 
 ```
