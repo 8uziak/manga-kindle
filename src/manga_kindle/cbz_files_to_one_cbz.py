@@ -1,19 +1,19 @@
-import copy
 import os
 import re
 import zipfile
 import shutil
+import uuid
 
 class CbzFilesToOneCbz:
     def __init__(self, folder_path: str, manga_name: str, custom_cover_path: str | None) -> None:
         self.folder_path = folder_path
         self.manga_name = manga_name
         self.custom_cover_path = custom_cover_path
+        self.manga_name_folder = os.path.join(self.folder_path, manga_name)
 
-        self.manga_name_folder = os.path.join(self.folder_path, self.manga_name)
-        self.copy_cbz_files = os.path.join(self.manga_name_folder, 'cbz_copy_file')
-        self.processing_folder = os.path.join(self.manga_name_folder, 'processing')
-        self.final_folder = os.path.join(self.manga_name_folder, 'final')
+        self.copy_cbz_files = os.path.join(self.manga_name_folder, self.create_unique_folder_name('cbz_copy_file'))
+        self.processing_folder = os.path.join(self.manga_name_folder, self.create_unique_folder_name('processing'))
+        self.final_folder = os.path.join(self.manga_name_folder, self.create_unique_folder_name('final'))
 
         self.create_folders_to_process_operation(self.manga_name_folder)
         self.create_folders_to_process_operation(self.copy_cbz_files)
@@ -27,8 +27,17 @@ class CbzFilesToOneCbz:
 
         if self.custom_cover_path:
             self.custom_cover(self.custom_cover_path, self.final_folder)
-            
-        self.final_folder_to_manga_name_folder(self.folder_path, self.manga_name)
+
+        self.final_folder_to_manga_name_folder(self.folder_path, self.create_unique_folder_name(manga_name))
+
+    def create_unique_folder_name(self, folder_name: str | None):
+        folder_name_with_uuid = folder_name + '-' + str(uuid.uuid4())
+        if os.path.exists(os.path.join(self.manga_name_folder, folder_name)):
+            if os.path.exists(os.path.join(folder_name_with_uuid)):
+                self.create_unique_folder_name(folder_name_with_uuid)
+            else:
+                return folder_name_with_uuid
+        return folder_name
 
     def create_folders_to_process_operation(self, folder_name: str | None) -> None:
         if not os.path.exists(folder_name):
@@ -39,9 +48,9 @@ class CbzFilesToOneCbz:
         files = os.listdir(folder_path)
         for file in files:
             if file.endswith('.cbz'):
-                letsgo = os.path.join(folder_path, file)
-                copy_cbz_files_l = os.path.join(copy_cbz_files, file)
-                self.copy_file_from_one_destination_to_other_destination(letsgo, copy_cbz_files_l)
+                folder_path_file = os.path.join(folder_path, file)
+                copy_cbz_files_file = os.path.join(copy_cbz_files, file)
+                self.copy_file_from_one_destination_to_other_destination(folder_path_file, copy_cbz_files_file)
 
     def list_files(self, directory: str) -> None:
         try:
@@ -49,8 +58,14 @@ class CbzFilesToOneCbz:
             print("Files in directory:", directory)
             for file in files:
                 print(file)
+        except FileNotFoundError:
+            print(f"Error: Directory '{directory}' not found.")
+        except PermissionError:
+            print(f"Error: Permission denied for directory '{directory}'.")
+        except OSError as e:
+            print(f"Error: {e}")
         except Exception as e:
-            print(f"Error occurred: {e}")
+            print(f"An unexpected error occurred: {e}")
 
     def natural_sort_key(self, s: str) -> str:
         return [int(text) if text.isdigit() else text.lower() for text in re.split(r'(\d+)', s)]
@@ -59,8 +74,16 @@ class CbzFilesToOneCbz:
         try:
             shutil.copyfile(source_file, destination_file)
             print(f"File '{source_file}' copied to '{destination_file}' successfully.")
+        except (shutil.SameFileError, shutil.SpecialFileError) as e:
+            print(f"Error: {e}")
+        except FileNotFoundError:
+            print(f"Error: Source or destination file not found.")
+        except PermissionError:
+            print(f"Error: Permission denied to access files.")
+        except OSError as e:
+            print(f"Error: {e}")
         except Exception as e:
-            print(f"Error occurred: {e}")
+            print(f"An unexpected error occurred: {e}")
 
     def move_files(self, source_folder: str, destination_folder: str) -> None:
         files = os.listdir(source_folder)
@@ -78,14 +101,11 @@ class CbzFilesToOneCbz:
         return num_files
 
     def final_folder_to_manga_name_folder(self, folder_path: str, manga_name: str) -> None:
-        manga_name_folder = os.path.join(folder_path, manga_name)
-        final_folder = os.path.join(manga_name_folder, 'final')
+        end_folder_name = os.path.join(self.manga_name_folder , manga_name)
+        os.rename(self.final_folder , end_folder_name)
+        print(f"Renamed {self.final_folder } to {end_folder_name}")
 
-        end_folder_name = os.path.join(manga_name_folder, manga_name)
-        os.rename(final_folder, end_folder_name)
-        print(f"Renamed {final_folder} to {end_folder_name}")
-
-        shutil.make_archive(end_folder_name, 'zip', root_dir=folder_path, base_dir=manga_name)
+        shutil.make_archive(end_folder_name, 'zip', root_dir=os.path.join(folder_path, self.manga_name), base_dir=manga_name)
 
         os.rename(f"{end_folder_name}.zip", f"{end_folder_name}.cbz")
         print(f"Renamed {end_folder_name}.zip to {end_folder_name}.cbz")
@@ -112,7 +132,6 @@ class CbzFilesToOneCbz:
                     zip_ref.extractall(processing_folder)
                     print(f"Unzipped {new_file_path}")
                 
-                processing_count = self.count_files_in_folder(processing_folder)
                 final_count = self.count_files_in_folder(final_folder)
 
                 pages = sorted(os.listdir(processing_folder))
@@ -128,7 +147,5 @@ class CbzFilesToOneCbz:
                     os.rename(old_page_path, new_page_path)
                     print(f"Renamed {old_page_path} to {new_page_path}")
 
-                self.remove_temp_workpath(processing_folder)
                 self.move_files(processing_folder, final_folder)
-
-                
+                self.remove_temp_workpath(processing_folder)                 
