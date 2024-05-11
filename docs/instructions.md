@@ -101,7 +101,7 @@ It means there should be naming pattern (name + number) e.g:
 
 4. Click Convert button to convert many to one CBZ file.
 
-5. Egzample workpaths
+5. Egzample workpaths ('#<-' is an indication of a comment in worktrees below)
 
 ### 1. [before] With no folder of the same name as added via "add folder" 
 ```
@@ -190,7 +190,7 @@ It means there should be naming pattern (name + number) e.g:
     ├── attack_on_manga chapter 5.cbz
     ├── ... etc.cbz
     └── attack_on_manga/
-        ├── attack_on_manga-a31f20a5-c450-43ce-a73d-03b60cf7e1a6/ #<- uuid added as random generated string to make folder's name unique
+        ├── attack_on_manga-a31f20a5-c450-43ce-a73d-03b60cf7e1a6/ # <- uuid added as random generated string to make folder's name unique
         │   ├── 0.jpg # <- if you added your custom manga cover (using Add custom cover)
         │   ├── 1.jpg
         │   ├── 2.jpg
