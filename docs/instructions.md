@@ -13,7 +13,7 @@ Before using Manga Kindle, you'll need to install Python.
 1. Install Manga Kindle from PyPI.
 
     ``` 
-    pip install -i https://test.pypi.org/simple/ manga-kindle==0.0.2
+    pip install -i https://test.pypi.org/simple/ manga-kindle==0.0.3
     ```
 
 2. To run Manga-Kindle from the source code, follow the instructions below.
@@ -101,8 +101,9 @@ It means there should be naming pattern (name + number) e.g:
 
 4. Click Convert button to convert many to one CBZ file.
 
+## 5. Egzample workpaths ('#<-' is an indication of a comment in worktrees below)
 
-### Egzample workpath before
+### 1. [before] With no folder of the same name as added via "add folder" 
 ```
 .
 └── manga_folder/
@@ -113,7 +114,7 @@ It means there should be naming pattern (name + number) e.g:
     ├── attack_on_manga chapter 5.cbz
     └── ... etc.cbz
 ```
-### Egzample workpath after (assuming you put 'attack_on_manga' in Add folder textbox)
+### 1. [after] With no folder of the same name as added via "add folder" (assuming you put 'attack_on_manga' in Add folder textbox)
 ```
 .
 └── manga_folder/
@@ -131,4 +132,69 @@ It means there should be naming pattern (name + number) e.g:
         │   ├── 3.jpg
         │   └── ... etc.jpg
         └── attack_on_manga.cbz # <- with all jpg files which you can see in attack_on_manga folder
+```
+
+### 2. [before] With folder of the same name as added via "add folder" 
+```
+.
+└── manga_folder/
+    ├── attack_on_manga chapter 1.cbz
+    ├── attack_on_manga chapter 2.cbz
+    ├── attack_on_manga chapter 3.cbz
+    ├── attack_on_manga chapter 4.cbz
+    ├── attack_on_manga chapter 5.cbz
+    ├── ... etc.cbz
+    └── attack_on_manga/
+```
+
+### 2. [after] With folder of the same name as added via "add folder" 
+```
+.
+└── manga_folder/
+    ├── attack_on_manga chapter 1.cbz
+    ├── attack_on_manga chapter 2.cbz
+    ├── attack_on_manga chapter 3.cbz
+    ├── attack_on_manga chapter 4.cbz
+    ├── attack_on_manga chapter 5.cbz
+    ├── ... etc.cbz
+    └── attack_on_manga/
+        ├── attack_on_manga/
+        │   ├── 0.jpg # <- if you added your custom manga cover (using Add custom cover)
+        │   ├── 1.jpg
+        │   ├── 2.jpg
+        │   ├── 3.jpg
+        │   └── ... etc.jpg
+        └── attack_on_manga.cbz # <- with all jpg files which you can see in attack_on_manga folder
+```
+### 3. [before] With folder of the same name as added via "add folder" and same name inside this folder
+```
+.
+└── manga_folder/
+    ├── attack_on_manga chapter 1.cbz
+    ├── attack_on_manga chapter 2.cbz
+    ├── attack_on_manga chapter 3.cbz
+    ├── attack_on_manga chapter 4.cbz
+    ├── attack_on_manga chapter 5.cbz
+    ├── ... etc.cbz
+    └── attack_on_manga/
+        ├── attack_on_manga/
+```
+### 3. [after] With folder of the same name as added via "add folder" 
+```
+.
+└── manga_folder/
+    ├── attack_on_manga chapter 1.cbz
+    ├── attack_on_manga chapter 2.cbz
+    ├── attack_on_manga chapter 3.cbz
+    ├── attack_on_manga chapter 4.cbz
+    ├── attack_on_manga chapter 5.cbz
+    ├── ... etc.cbz
+    └── attack_on_manga/
+        ├── attack_on_manga-a31f20a5-c450-43ce-a73d-03b60cf7e1a6/ # <- uuid added as random generated string to make folder's name unique
+        │   ├── 0.jpg # <- if you added your custom manga cover (using Add custom cover)
+        │   ├── 1.jpg
+        │   ├── 2.jpg
+        │   ├── 3.jpg
+        │   └── ... etc.jpg
+        └── attack_on_manga-a31f20a5-c450-43ce-a73d-03b60cf7e1a6.cbz # <- with all jpg files which you can see in attack_on_manga folder
 ```
