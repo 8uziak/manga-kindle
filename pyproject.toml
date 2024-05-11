@@ -7,7 +7,7 @@ packages = ["src/manga_kindle"]
 
 [project]
 name = "manga_kindle"
-version = "0.0.2"
+version = "0.0.3"
 authors = [
   { name="Mateusz Buziak", email="matbuziak@gmail.com" },
 ]
