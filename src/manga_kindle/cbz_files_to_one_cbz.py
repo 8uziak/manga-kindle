@@ -3,6 +3,7 @@ import re
 import zipfile
 import shutil
 import uuid
+from tkinter.messagebox import showinfo
 
 class CbzFilesToOneCbz:
     def __init__(self, folder_path: str, manga_name: str, custom_cover_path: str | None) -> None:
@@ -59,13 +60,13 @@ class CbzFilesToOneCbz:
             for file in files:
                 print(file)
         except FileNotFoundError:
-            print(f"Error: Directory '{directory}' not found.")
+            showinfo(f"Error: Directory '{directory}' not found.")
         except PermissionError:
-            print(f"Error: Permission denied for directory '{directory}'.")
+            showinfo(f"Error: Permission denied for directory '{directory}'.")
         except OSError as e:
-            print(f"Error: {e}")
+            showinfo(f"Error: {e}")
         except Exception as e:
-            print(f"An unexpected error occurred: {e}")
+            showinfo(f"An unexpected error occurred: {e}")
 
     def natural_sort_key(self, s: str) -> str:
         return [int(text) if text.isdigit() else text.lower() for text in re.split(r'(\d+)', s)]
@@ -75,15 +76,15 @@ class CbzFilesToOneCbz:
             shutil.copyfile(source_file, destination_file)
             print(f"File '{source_file}' copied to '{destination_file}' successfully.")
         except (shutil.SameFileError, shutil.SpecialFileError) as e:
-            print(f"Error: {e}")
+            showinfo(f"Error: {e}")
         except FileNotFoundError:
-            print(f"Error: Source or destination file not found.")
+            showinfo(f"Error: Source or destination file not found.")
         except PermissionError:
-            print(f"Error: Permission denied to access files.")
+            showinfo(f"Error: Permission denied to access files.")
         except OSError as e:
-            print(f"Error: {e}")
+            showinfo(f"Error: {e}")
         except Exception as e:
-            print(f"An unexpected error occurred: {e}")
+            showinfo(f"An unexpected error occurred: {e}")
 
     def move_files(self, source_folder: str, destination_folder: str) -> None:
         files = os.listdir(source_folder)
