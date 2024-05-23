@@ -32,8 +32,9 @@ class CbzFilesToOneCbz:
         self.final_folder_to_manga_name_folder(self.folder_path, self.create_unique_folder_name(manga_name))
 
     def create_unique_folder_name(self, folder_name: str | None):
-        folder_name_with_uuid = folder_name + '-' + str(uuid.uuid4())
         if os.path.exists(os.path.join(self.manga_name_folder, folder_name)):
+
+            folder_name_with_uuid = folder_name + '-' + str(uuid.uuid4())
             if os.path.exists(os.path.join(folder_name_with_uuid)):
                 self.create_unique_folder_name(folder_name_with_uuid)
             else:
